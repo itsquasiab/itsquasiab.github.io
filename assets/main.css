@@ -15,6 +15,7 @@
     --bg: #fbfbfb;
     --border: #d2d2d2;
     --text: #000000;
+    --accent: #576cbc;
 
     --content-bg: #f0f0f0;
     --content-border: #d4d3c1;
@@ -26,7 +27,6 @@
 /* Body */
 body {
     font-family: 'Space Grotesk';
-    font-weight: 400;
     font-size: 18px;
 
     background-color: var(--bg);
@@ -82,6 +82,14 @@ body.dark {
     padding-bottom: 0;
 }
 
+.content-title h1{
+    font-size: 3.5rem;
+}
+
+.content-title p{
+    font-size: 1.5rem;
+}
+
 .content {
     background-color: var(--content-bg);
     border: 1px solid var(--content-border);
@@ -101,9 +109,20 @@ a {
     color: var(--text);
     text-decoration: none;
     padding: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
     display: inline-block;
     margin-right: 10px;
     margin-bottom: 12px;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+a:active {
+    color: var(--accent);
+    font-weight: bold;
 }
 
 button {
@@ -115,4 +134,14 @@ footer {
     padding: 16px;
     padding-left: 24px;
     padding-right: 24px;
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        margin-left: 0;
+        margin-right: 0;
+        border-left: none;
+        border-right: none;
+        padding: 4rem;
+    }
 }
