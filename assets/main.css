@@ -58,10 +58,9 @@ body.dark {
 
     width: calc(100% - 2px);
     position: fixed;
-    z-index: 1;
 }
 
-.nav-menu {
+.menu-links {
     display: flex;
     height: 100%;
 }
@@ -74,6 +73,7 @@ body.dark {
     padding: 16px;
     padding-left: 24px;
     padding-right: 24px;
+    margin: 0;
 }
 
 .content-title {
@@ -96,11 +96,13 @@ body.dark {
 }
 
 a {
-    text-decoration: none;
     background-color: var(--link-bg);
     border: 1px solid var(--link-border);
     color: var(--text);
+    text-decoration: none;
     padding: 16px;
+    display: inline-block;
+    margin-right: 12px;
 }
 
 button {
