@@ -23,3 +23,12 @@ function toggleDarkMode() {
 if (darkModeToggle) {
     darkModeToggle.addEventListener('click', toggleDarkMode);
 }
+
+function navbarMenu() {
+    var navResponsive = document.getElementById("nav");
+    if (navResponsive.className === "nav-menu") {
+        navResponsive.className += " responsive";
+    } else {
+        navResponsive.className = "nav-menu";
+    }
+}

@@ -65,14 +65,17 @@ body.dark {
     height: 100%;
 }
 
-.nav-links {
+.nav-menu .nav-icon {
+    display: none;
+    float: right;
+}
+
+.nav-menu a {
     background-color: var(--bg);
     border: none;
     border-right: 1px solid var(--border);
     color: var(--text);
-    padding: 16px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 16px 24px;
     margin: 0;
 }
 
@@ -82,11 +85,11 @@ body.dark {
     padding-bottom: 0;
 }
 
-.content-title h1{
+.content-title h1 {
     font-size: 3.5rem;
 }
 
-.content-title p{
+.content-title p {
     font-size: 1.5rem;
 }
 
@@ -97,10 +100,8 @@ body.dark {
     padding: 4rem;
 }
 
-.center {
+.nav-brand {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 a {
@@ -108,12 +109,11 @@ a {
     border: 1px solid var(--link-border);
     color: var(--text);
     text-decoration: none;
-    padding: 16px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 16px 24px;
     display: inline-block;
     margin-right: 10px;
     margin-bottom: 12px;
+    text-align: left;
 }
 
 a:hover {
@@ -131,9 +131,20 @@ button {
 
 footer {
     border-top: 1px solid var(--border);
-    padding: 16px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 16px 24px;
+}
+
+@media screen and (max-width: 800px) {
+    .nav-menu a:not(:first-child) {
+        display: none;
+    }
+
+    .nav-menu a.nav-icon {
+        display: block;
+        position: absolute;
+        right: 0;
+        border-right: none;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -143,5 +154,36 @@ footer {
         border-left: none;
         border-right: none;
         padding: 4rem;
+    }
+
+    .nav-menu.responsive {
+        display: block;
+    }
+
+    .nav-menu.responsive .nav-icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-right: none;
+    }
+
+    .nav-menu.responsive a {
+        display: block;
+        text-align: left;
+        border-right: none;
+    }
+
+    .content-title {
+        padding: 2rem;
+        padding-top: 12rem;
+        padding-bottom: 0;
+    }
+
+    .content-title h1 {
+        font-size: 3rem;
+    }
+
+    .content-title p {
+        font-size: 1.25rem;
     }
 }

@@ -17,14 +17,18 @@
     <!-- Start -->
 
     <div class="navbar">
-        <div class="nav-menu">
+        <div class="nav-menu" id="nav">
 
-            <a class="nav-links" href="index.html"><img class="center" src="assets/images/ItsQuasiLogo.png"
-                    alt="ItsQuasi" height="24px"></a>
+            <a href="index.html"><img class="nav-brand" src="assets/images/ItsQuasiLogo.png" alt="ItsQuasi"
+                    height="24px"></a>
 
-            <a class="nav-links" href="socials.html">Socials</a>
+            <a href="socials.html">Socials</a>
 
-            <button class="nav-links" id="darkModeToggle"><i class="fa-solid fa-circle-half-stroke"></i></button>
+            <a id="darkModeToggle"><i class="fa-solid fa-circle-half-stroke"></i></a>
+
+            <a class="nav-icon" href="javascript:void(0);" onclick="navbarMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
 
         </div>
     </div>
@@ -49,7 +53,7 @@
 
     <!-- End -->
 
-    <script src="assets/dark_mode.js"></script>
+    <script src="assets/main.js"></script>
 </body>
 
 </html>
