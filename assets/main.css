@@ -17,6 +17,8 @@
     --text: #000000;
     --accent: #576cbc;
 
+    --title-image: linear-gradient(to right, #576CBC, #A5D7E8);
+
     --content-bg: #f0f0f0;
     --content-border: #d4d3c1;
 
@@ -43,6 +45,9 @@ body.dark {
     --bg: #1c1c1c;
     --border: #3c3c3c;
     --text: #ffffff;
+    --accent: #576cbc;
+
+    --title-image: linear-gradient(to right, #0B2447, #19376D);
 
     --content-bg: #181818;
     --content-border: #303030;
@@ -63,6 +68,7 @@ body.dark {
 .nav-menu {
     display: flex;
     height: 100%;
+    overflow-x: auto;
 }
 
 .nav-menu .nav-icon {
@@ -80,9 +86,16 @@ body.dark {
 }
 
 .content-title {
-    padding: 5rem;
+    background-image: var(--title-image);
+    color: #ffffff;
     padding-top: 20rem;
     padding-bottom: 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.title-text{
+    background-image: linear-gradient(to bottom, rgb(24, 24, 24, 0), rgb(24, 24, 24, 0.5));
+    padding: 2rem 5rem;
 }
 
 .content-title h1 {
@@ -157,7 +170,9 @@ footer {
     }
 
     .nav-menu.responsive {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 
     .nav-menu.responsive .nav-icon {
@@ -174,9 +189,12 @@ footer {
     }
 
     .content-title {
-        padding: 2rem;
         padding-top: 12rem;
         padding-bottom: 0;
+    }
+
+    .title-text{
+        padding: 2rem;
     }
 
     .content-title h1 {
