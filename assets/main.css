@@ -113,6 +113,10 @@ body.dark {
     padding: 4rem;
 }
 
+.content-large{
+    margin: 5rem;
+}
+
 .nav-brand {
     display: block;
 }
@@ -140,6 +144,11 @@ a:active {
 
 button {
     border: none;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid var(--border);
 }
 
 footer {
