@@ -93,7 +93,7 @@ body.dark {
     border-bottom: 1px solid var(--border);
 }
 
-.title-text{
+.title-text {
     background-image: linear-gradient(to bottom, rgb(24, 24, 24, 0), rgb(24, 24, 24, 0.5));
     padding: 2rem 5rem;
 }
@@ -113,7 +113,7 @@ body.dark {
     padding: 4rem;
 }
 
-.content-large{
+.content-large {
     margin: 5rem;
 }
 
@@ -178,6 +178,10 @@ footer {
         padding: 4rem;
     }
 
+    .content-large {
+        margin: 4rem;
+    }
+
     .nav-menu.responsive {
         display: flex;
         flex-wrap: wrap;
@@ -202,7 +206,7 @@ footer {
         padding-bottom: 0;
     }
 
-    .title-text{
+    .title-text {
         padding: 2rem;
     }
 
