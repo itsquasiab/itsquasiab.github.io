@@ -77,7 +77,7 @@ body.dark {
 }
 
 .nav-menu a {
-    background-color: var(--bg);
+    background-color: transparent;
     border: none;
     border-right: 1px solid var(--border);
     color: var(--text);
