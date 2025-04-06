@@ -85,6 +85,10 @@ body.dark {
     margin: 0;
 }
 
+.nav-brand {
+    display: block;
+}
+
 .content-title {
     background-image: var(--title-image);
     color: #ffffff;
@@ -115,10 +119,6 @@ body.dark {
 
 .content-large {
     margin: 5rem;
-}
-
-.nav-brand {
-    display: block;
 }
 
 a {
