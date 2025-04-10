@@ -8,6 +8,7 @@
 
   <link rel="icon" type="icon" href="assets/images/blue_screen_square.png">
   <link rel="stylesheet" href="assets/main.css">
+  <link rel="stylesheet" href="assets/tailwind.css">
 
   <script src="https://kit.fontawesome.com/50276babe5.js" crossorigin="anonymous"></script>
 </head>
@@ -17,41 +18,38 @@
   <!-- Start -->
 
   <div class="navbar">
-    <div class="nav-menu" id="nav">
-
+    <nav class="nav-menu" id="nav">
       <a href="index.html"><img class="nav-brand" src="assets/images/ItsQuasiLogo.png" alt="ItsQuasi" height="24px"></a>
-
+      <a href="projects.html">Projects</a>
+      <a href="gallery.html">Gallery</a>
       <a href="socials.html">Socials</a>
-
-      <a id="darkModeToggle"><i class="fa-solid fa-circle-half-stroke"></i></a>
-
-      <a class="nav-icon" href="javascript:void(0);" onclick="navbarMenu()">
-        <i class="fa fa-bars"></i>
-      </a>
-
-    </div>
+      <!--<a id="darkModeToggle"><i class="fa-solid fa-circle-half-stroke"></i></a>-->
+      <a class="nav-icon" href="javascript:void(0);" onclick="navbarMenu()"><i class="fa fa-bars"></i></a>
+    </nav>
   </div>
 
   <div class="content-title">
     <div class="title-text">
-      <h1>Welcome to ItsQuasi's official website!</h1>
+      <h1 class="text-5xl font-bold">Welcome to ItsQuasi's official website!</h1>
       <p>All of ItsQuasi's creations are being here.</p>
     </div>
   </div>
 
-  <div class="content-large">
-    <h1>ItsQuasi</h1>
-    <img src="assets/images/blue_screen_square.png" alt="ItsQuasi's Profile Picture" width="22.5%">
-    <img src="assets/images/blue_screen.png" alt="ItsQuasi's Banner" width="40%">
-  </div>
-  <hr>
-  <div class="content-large">
-    <p>Yes actually this is fully made by ItsQuasi, purely HTML, CSS and JavaScript. No Bootstrap was used in the making
-      of this website!</p>
+  <div class="content">
+    <h1 class="font-bold">Hello! I'm ItsQuasi</h1>
+    <p>You can call me Quasi.</p>
+    <img src="assets/images/blue_screen_square.png" alt="ItsQuasi's Profile Picture" width="20%">
+
+    <h1 class="font-bold">Quasiboard</h1>
+    <div class="content-inner">
+      <h1>What's new?</h1>
+      <p>Still building and improving this website, fell free to check out all my stuff.</p>
+    </div>
+
   </div>
 
   <footer>
-    <h1>Made by ItsQuasi</h1>
+    <h1 class="text-3xl font-bold">Made by ItsQuasi</h1>
   </footer>
 
   <!-- End -->

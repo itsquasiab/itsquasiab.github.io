@@ -1,48 +1,10 @@
-/* Import the Google Font */
+/* Importing the Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-
-/* Color Scheme */
-[data-color-scheme="dark"] {
-    color-scheme: dark;
-}
-
-[data-color-scheme="light"] {
-    color-scheme: light;
-}
 
 /* Root */
 :root {
-    --bg: #fbfbfb;
-    --border: #d2d2d2;
-    --text: #000000;
-    --accent: #576cbc;
-
-    --title-image: linear-gradient(to right, #576CBC, #A5D7E8);
-
-    --content-bg: #f0f0f0;
-    --content-border: #d4d3c1;
-
-    --link-bg: #e2e0cf;
-    --link-border: #c7c7b5;
-}
-
-/* Body */
-body {
-    font-family: 'Space Grotesk';
-    font-size: 18px;
-
-    background-color: var(--bg);
-    border: 1px solid var(--border);
-    border-top: none;
-    color: var(--text);
-
-    width: calc(100% - 2px);
-    margin: 0;
-}
-
-/* Dark Mode */
-body.dark {
     --bg: #1c1c1c;
+    --bg-glass: rgb(28, 28, 28, 0.4);
     --border: #3c3c3c;
     --text: #ffffff;
     --accent: #576cbc;
@@ -56,10 +18,24 @@ body.dark {
     --link-border: #444444;
 }
 
-.navbar {
+/* Body */
+body {
+    font-family: 'Space Grotesk';
+    font-size: 18px;
+
     background-color: var(--bg);
-    border-bottom: 1px solid var(--border);
     color: var(--text);
+    border: 1px solid var(--border);
+    border-top: none;
+
+    overflow: auto;
+
+    width: 100%;
+    margin: 0;
+}
+
+.navbar {
+    backdrop-filter: blur(40px);
 
     width: calc(100% - 2px);
     position: fixed;
@@ -67,6 +43,7 @@ body.dark {
 
 .nav-menu {
     display: flex;
+    justify-content: center;
     height: 100%;
     overflow-x: auto;
 }
@@ -79,7 +56,6 @@ body.dark {
 .nav-menu a {
     background-color: transparent;
     border: none;
-    border-right: 1px solid var(--border);
     color: var(--text);
     padding: 16px 24px;
     margin: 0;
@@ -90,7 +66,7 @@ body.dark {
 }
 
 .content-title {
-    background-image: var(--title-image);
+    background-image: url("images/WIP.png");
     color: #ffffff;
     padding-top: 20rem;
     padding-bottom: 0;
@@ -98,7 +74,7 @@ body.dark {
 }
 
 .title-text {
-    background-image: linear-gradient(to bottom, rgb(24, 24, 24, 0), rgb(24, 24, 24, 0.5));
+    background-image: linear-gradient(to bottom, rgb(24, 24, 24, 0), rgb(24, 24, 24, 0.6));
     padding: 2rem 5rem;
 }
 
@@ -117,8 +93,17 @@ body.dark {
     padding: 4rem;
 }
 
-.content-large {
-    margin: 5rem;
+.content-inner{
+    border: 1px solid var(--content-border);
+    padding: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 2rem;
+}
+
+p{
+    font-size: 1.25rem;
 }
 
 a {
@@ -128,9 +113,6 @@ a {
     text-decoration: none;
     padding: 16px 24px;
     display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 12px;
-    text-align: left;
 }
 
 a:hover {
@@ -176,10 +158,6 @@ footer {
         border-left: none;
         border-right: none;
         padding: 4rem;
-    }
-
-    .content-large {
-        margin: 4rem;
     }
 
     .nav-menu.responsive {
