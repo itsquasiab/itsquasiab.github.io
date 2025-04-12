@@ -1,21 +1,30 @@
 /* Importing the Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
+/* Color Scheme */
+[data-color-scheme="dark"] {
+    color-scheme: dark;
+}
+
+[data-color-scheme="light"] {
+    color-scheme: light;
+}
+
 /* Root */
 :root {
-    --bg: #1c1c1c;
-    --bg-glass: rgb(28, 28, 28, 0.4);
-    --border: #3c3c3c;
-    --text: #ffffff;
+    --bg: #e1e5f8;
+    --bg-glass: rgb(251, 251, 251, 0.65);
+    --border: #a9b5e2;
+    --text: #000000;
     --accent: #576cbc;
 
-    --title-image: linear-gradient(to right, #0B2447, #19376D);
+    --title-image: linear-gradient(to right, #576CBC, #A5D7E8);
 
-    --content-bg: #181818;
-    --content-border: #303030;
+    --content-bg: #f6f8fc;
+    --content-border: #d4d3c1;
 
-    --link-bg: #242424;
-    --link-border: #444444;
+    --link-bg: #e2e0cf;
+    --link-border: #c7c7b5;
 }
 
 /* Body */
@@ -25,7 +34,6 @@ body {
 
     background-color: var(--bg);
     color: var(--text);
-    border: 1px solid var(--border);
     border-top: none;
 
     overflow: auto;
@@ -34,18 +42,38 @@ body {
     margin: 0;
 }
 
+/* Dark Mode */
+body.dark {
+    --bg: #050f29;
+    --bg-glass: rgb(28, 28, 28, 0.65);
+    --border: #0B2447;
+    --text: #ffffff;
+    --accent: #576cbc;
+
+    --title-image: linear-gradient(to right, #0B2447, #19376D);
+
+    --content-bg: #0d111b;
+    --content-border: #1b1b1b;
+
+    --link-bg: #242424;
+    --link-border: #444444;
+}
+
 .navbar {
+    background-color: var(--bg-glass);
     backdrop-filter: blur(40px);
 
-    width: calc(100% - 2px);
+    width: calc(100%);
     position: fixed;
+
+    background-image: url('images/noise/noise.png');
+    background-repeat: repeat;
 }
 
 .nav-menu {
     display: flex;
     justify-content: center;
     height: 100%;
-    overflow-x: auto;
 }
 
 .nav-menu .nav-icon {
@@ -58,7 +86,6 @@ body {
     border: none;
     color: var(--text);
     padding: 16px 24px;
-    margin: 0;
 }
 
 .nav-brand {
@@ -70,7 +97,6 @@ body {
     color: #ffffff;
     padding-top: 20rem;
     padding-bottom: 0;
-    border-bottom: 1px solid var(--border);
 }
 
 .title-text {
@@ -93,16 +119,21 @@ body {
     padding: 4rem;
 }
 
-.content-inner{
+.content-inner {
     border: 1px solid var(--content-border);
     padding: 2rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-size: 2rem;
 }
 
-p{
+p {
     font-size: 1.25rem;
 }
 
@@ -134,7 +165,6 @@ hr {
 }
 
 footer {
-    border-top: 1px solid var(--border);
     padding: 16px 24px;
 }
 
@@ -153,11 +183,14 @@ footer {
 
 @media screen and (max-width: 800px) {
     .content {
-        margin-left: 0;
-        margin-right: 0;
-        border-left: none;
-        border-right: none;
-        padding: 4rem;
+        margin: 1.5rem 1.5rem;
+        padding: 3rem;
+        
+    }
+
+    .content-inner {
+        border: 1px solid var(--content-border);
+        padding: 1.5rem;
     }
 
     .nav-menu.responsive {
@@ -194,5 +227,18 @@ footer {
 
     .content-title p {
         font-size: 1.25rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 1.75rem;
+    }
+
+    p {
+        font-size: 1rem;
     }
 }
