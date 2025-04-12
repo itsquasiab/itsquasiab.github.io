@@ -39,7 +39,6 @@ body {
     overflow: auto;
 
     width: 100%;
-    margin: 0;
 }
 
 /* Dark Mode */
@@ -62,6 +61,7 @@ body.dark {
 .navbar {
     background-color: var(--bg-glass);
     backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
 
     width: calc(100%);
     position: fixed;
@@ -133,6 +133,11 @@ h6 {
     font-size: 2rem;
 }
 
+.title{
+    font-size: 2.5rem;
+    text-decoration: underline;
+}
+
 p {
     font-size: 1.25rem;
 }
@@ -142,7 +147,7 @@ a {
     border: 1px solid var(--link-border);
     color: var(--text);
     text-decoration: none;
-    padding: 16px 24px;
+    padding: 12px 18px;
     display: inline-block;
 }
 
@@ -168,7 +173,7 @@ footer {
     padding: 16px 24px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 750px) {
     .nav-menu a:not(:first-child) {
         display: none;
     }
@@ -181,16 +186,25 @@ footer {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .content {
-        margin: 1.5rem 1.5rem;
+        margin: 3rem;
         padding: 3rem;
-        
     }
 
     .content-inner {
-        border: 1px solid var(--content-border);
         padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .content {
+        margin: 1rem;
+        padding: 2.5rem;
+    }
+
+    .content-inner {
+        padding: 1rem;
     }
 
     .nav-menu.responsive {
@@ -213,7 +227,7 @@ footer {
     }
 
     .content-title {
-        padding-top: 12rem;
+        padding-top: 10rem;
         padding-bottom: 0;
     }
 
@@ -222,7 +236,7 @@ footer {
     }
 
     .content-title h1 {
-        font-size: 3rem;
+        font-size: 2.25rem;
     }
 
     .content-title p {
@@ -235,7 +249,7 @@ footer {
     h4,
     h5,
     h6 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
     p {
