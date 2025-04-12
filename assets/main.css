@@ -207,6 +207,10 @@ footer {
         padding: 1rem;
     }
 
+    .title{
+        font-size: 2rem;
+    }
+
     .nav-menu.responsive {
         display: flex;
         flex-wrap: wrap;
