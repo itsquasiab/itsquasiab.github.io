@@ -12,19 +12,16 @@
 
 /* Root */
 :root {
-    --bg: #e1e5f8;
-    --bg-glass: rgb(251, 251, 251, 0.65);
-    --border: #a9b5e2;
+    --bg: #daeef6;
+    --bg-glass: rgba(255, 255, 255, 0.65);
+    --border: #000000;
     --text: #000000;
     --accent: #576cbc;
 
-    --title-image: linear-gradient(to right, #576CBC, #A5D7E8);
+    --content-bg: #e7f4f9;
 
-    --content-bg: #f6f8fc;
-    --content-border: #d4d3c1;
-
-    --link-bg: #e2e0cf;
-    --link-border: #c7c7b5;
+    --link-bg: #d1eaf3;
+    --link-border: #c0e2ee;
 }
 
 /* Body */
@@ -34,28 +31,22 @@ body {
 
     background-color: var(--bg);
     color: var(--text);
+    border: 1px solid var(--border);
     border-top: none;
-
-    overflow: auto;
-
-    width: 100%;
 }
 
 /* Dark Mode */
 body.dark {
-    --bg: #050f29;
-    --bg-glass: rgb(28, 28, 28, 0.65);
-    --border: #0B2447;
+    --bg: #020a16;
+    --bg-glass: rgba(0, 0, 0, 0.65);
+    --border: #ffffff;
     --text: #ffffff;
     --accent: #576cbc;
 
-    --title-image: linear-gradient(to right, #0B2447, #19376D);
+    --content-bg: #040f1e;
 
-    --content-bg: #0d111b;
-    --content-border: #1b1b1b;
-
-    --link-bg: #242424;
-    --link-border: #444444;
+    --link-bg: #061428;
+    --link-border: #0a1d38;
 }
 
 .navbar {
@@ -63,7 +54,10 @@ body.dark {
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
 
-    width: calc(100%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    width: calc(100% - 2px);
     position: fixed;
 
     background-image: url('images/noise/noise.png');
@@ -88,40 +82,26 @@ body.dark {
     padding: 16px 24px;
 }
 
-.nav-brand {
-    display: block;
+.content {
+    background-color: var(--content-bg);
+    border: 1px solid var(--border);
+    margin: 0 5rem;
+    padding: 4rem;
+    top: 2rem;
 }
 
 .content-title {
-    background-image: url("images/WIP.png");
-    color: #ffffff;
-    padding-top: 20rem;
-    padding-bottom: 0;
-}
-
-.title-text {
-    background-image: linear-gradient(to bottom, rgb(24, 24, 24, 0), rgb(24, 24, 24, 0.6));
-    padding: 2rem 5rem;
-}
-
-.content-title h1 {
-    font-size: 3.5rem;
-}
-
-.content-title p {
-    font-size: 1.5rem;
-}
-
-.content {
     background-color: var(--content-bg);
-    border: 1px solid var(--content-border);
-    margin: 5rem;
-    padding: 4rem;
+    margin: 0 5rem;
+    padding: 10rem 4rem 2rem 4rem;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
 }
 
 .content-inner {
-    border: 1px solid var(--content-border);
+    border: 2px dashed var(--border);
     padding: 2rem;
+    border-radius: 16px;
 }
 
 h1,
@@ -133,7 +113,7 @@ h6 {
     font-size: 2rem;
 }
 
-.title{
+.title {
     font-size: 2.5rem;
     text-decoration: underline;
 }
@@ -149,6 +129,7 @@ a {
     text-decoration: none;
     padding: 12px 18px;
     display: inline-block;
+    border-radius: 8px;
 }
 
 a:hover {
@@ -158,15 +139,6 @@ a:hover {
 a:active {
     color: var(--accent);
     font-weight: bold;
-}
-
-button {
-    border: none;
-}
-
-hr {
-    border: none;
-    border-bottom: 1px solid var(--border);
 }
 
 footer {
@@ -188,8 +160,13 @@ footer {
 
 @media screen and (max-width: 1000px) {
     .content {
-        margin: 3rem;
+        margin: 0 3rem;
         padding: 3rem;
+    }
+
+    .content-title {
+        margin: 0 3rem;
+        padding: 8rem 3rem 1.5rem 3rem;
     }
 
     .content-inner {
@@ -199,15 +176,20 @@ footer {
 
 @media screen and (max-width: 750px) {
     .content {
-        margin: 1rem;
+        margin: 0 1rem;
         padding: 2.5rem;
+    }
+
+    .content-title {
+        margin: 0 1rem;
+        padding: 6rem 2.5rem 1rem 2.5rem;
     }
 
     .content-inner {
         padding: 1rem;
     }
 
-    .title{
+    .title {
         font-size: 2rem;
     }
 
@@ -228,23 +210,6 @@ footer {
         display: block;
         text-align: left;
         border-right: none;
-    }
-
-    .content-title {
-        padding-top: 10rem;
-        padding-bottom: 0;
-    }
-
-    .title-text {
-        padding: 2rem;
-    }
-
-    .content-title h1 {
-        font-size: 2.25rem;
-    }
-
-    .content-title p {
-        font-size: 1.25rem;
     }
 
     h1,
