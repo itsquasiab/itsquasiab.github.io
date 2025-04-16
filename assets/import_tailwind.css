@@ -1,1 +1,2 @@
+/* npx @tailwindcss/cli -i ./assets/import_tailwind.css -o ./assets/tailwind.css --watch */
 @import "tailwindcss";
