@@ -86,14 +86,13 @@ body.dark {
     background-color: var(--content-bg);
     border: 1px solid var(--border);
     margin: 0 5rem;
-    padding: 4rem;
-    top: 2rem;
+    padding: 3rem;
 }
 
 .content-title {
     background-color: var(--content-bg);
     margin: 0 5rem;
-    padding: 10rem 4rem 2rem 4rem;
+    padding: 10rem 3rem 2rem 3rem;
     border-left: 1px solid var(--border);
     border-right: 1px solid var(--border);
 }
@@ -102,10 +101,6 @@ body.dark {
     border: 2px dashed var(--border);
     padding: 2rem;
     border-radius: 16px;
-}
-
-p {
-    font-size: 1.25rem;
 }
 
 a {
@@ -131,7 +126,23 @@ footer {
     padding: 16px 24px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1023px) {
+    .content {
+        margin: 0 3rem;
+        padding: 2rem;
+    }
+
+    .content-title {
+        margin: 0 3rem;
+        padding: 8rem 2rem 1.5rem 2rem;
+    }
+
+    .content-inner {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
     .nav-menu a:not(:first-child) {
         display: none;
     }
@@ -142,25 +153,7 @@ footer {
         right: 0;
         border-right: none;
     }
-}
 
-@media screen and (max-width: 1024px) {
-    .content {
-        margin: 0 3rem;
-        padding: 3rem;
-    }
-
-    .content-title {
-        margin: 0 3rem;
-        padding: 8rem 3rem 1.5rem 3rem;
-    }
-
-    .content-inner {
-        padding: 1.5rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
     .content {
         margin: 0 1rem;
         padding: 1.5rem;
@@ -192,9 +185,5 @@ footer {
         display: block;
         text-align: left;
         border-right: none;
-    }
-
-    p {
-        font-size: 1rem;
     }
 }
