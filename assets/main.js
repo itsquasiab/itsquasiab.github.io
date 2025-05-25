@@ -26,9 +26,9 @@ if (darkModeToggle) {
 
 function navbarMenu() {
     var navResponsive = document.getElementById("nav");
-    if (navResponsive.className === "nav-menu") {
+    if (navResponsive.className === "nav-content") {
         navResponsive.className += " responsive";
     } else {
-        navResponsive.className = "nav-menu";
+        navResponsive.className = "nav-content";
     }
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ItsQuasi | Socials</title>
 
-    <link rel="icon" type="icon" href="assets/images/blue_screen_square.png">
+    <link rel="icon" type="icon" href="assets/images/bsod_square.png">
     <link rel="stylesheet" href="assets/main.css">
     <link rel="stylesheet" href="assets/tailwind.css">
 
@@ -18,33 +18,35 @@
     <!-- Start -->
 
     <div class="navbar">
-        <nav class="nav-menu" id="nav">
-            <a href="index.html"><img src="assets/images/ItsQuasiLogo.png" style="height: 27px;" alt="ItsQuasi"></a>
+        <nav class="nav-menu">
+          <a href="index.html"><img src="assets/images/ItsQuasiLogo.png" style="height: 27px;" alt="ItsQuasi"></a>
+          <a class="nav-icon" href="javascript:void(0);" onclick="navbarMenu()"><i class="fa fa-bars"></i></a>
+          <nav id="nav" class="nav-content">
             <a href="projects.html">Projects</a>
             <a href="gallery.html">Gallery</a>
             <a href="socials.html">Socials</a>
             <a id="darkModeToggle"><i class="fa-solid fa-circle-half-stroke"></i></a>
-            <a class="nav-icon" href="javascript:void(0);" onclick="navbarMenu()"><i class="fa fa-bars"></i></a>
+          </nav>
         </nav>
-    </div>
+      </div>
 
-    <div class="content pt-3.5 px-2 pb-1 md:pt-4 lg:pt-6.5 lg:px-3 lg:pb-2" style="margin-top: 58px;">
-        <h1 class="text-4xl font-bold underline">Socials</h1>
-        <p>Welcome! This is where you can find ItsQuasi through social medias. Check out my Instagram and Bluesky to see
+    <div class="content pt-3.5 px-2 pb-1 md:pt-4 lg:pt-6.5 lg:px-3 lg:pb-2" style="margin-top: 67px;">
+        <h1 class="text-3xl md:text-4xl font-bold underline">Socials</h1>
+        <p class="md:md:text-lg">Welcome! This is where you can find ItsQuasi through social medias. Check out my Instagram and Bluesky to see
             my
             status.</p>
     </div>
 
     <div class="content p-2 lg:p-3">
 
-        <h1 class="text-3xl font-bold">Social Medias</h1>
+        <h1 class="text-2xl md:text-3xl font-bold">Social Medias</h1>
         <div class="content-inner">
             <a href="https://instagram.com/itsquasi23/">Instagram</a>
             <a href="https://bsky.app/profile/itsquasi.bsky.social">Bluesky</a>
         </div>
         <br>
-        <h1 class="text-3xl font-bold">ItsQuasi's Friends</h1>
-        <p>Check out some of my friend!</p>
+        <h1 class="text-2xl md:text-3xl font-bold">ItsQuasi's Friends</h1>
+        <p class="md:md:text-lg">Check out some of my friends!</p>
         <div class="content-inner">
             <a href="https://coderheck.pages.dev/">ioxzy</a>
         </div>
@@ -52,7 +54,7 @@
     </div>
 
     <footer>
-        <h1 class="text-3xl font-bold">Made by ItsQuasi</h1>
+        <h1 class="text-2xl md:text-3xl font-bold">Made by ItsQuasi</h1>
     </footer>
 
     <!-- End -->
