@@ -26,7 +26,8 @@
 /* Body */
 body {
     font-family: 'Space Grotesk';
-    background-color: var(--blue1);
+    background-image: linear-gradient(180deg, var(--blue1), var(--blue2));
+    min-height: 100vh;
 }
 
 /* Dark Mode */
@@ -53,9 +54,10 @@ body.dark {
     display: flex;
     justify-content: center;
     height: 100%;
+    overflow: hidden;
 }
 
-.nav-content{
+.nav-content {
     background-color: var(--blue1);
 }
 
@@ -73,16 +75,7 @@ body.dark {
 
 .content {
     background-color: var(--blue3);
-    border-top: 0;
-    border-radius: 16px;
-    margin: 0 16px 16px 16px;
-}
-
-.content-secondary {
-    background-color: var(--blue2);
-    border-top: 0;
-    padding: 8px 12px;
-    border-radius: 16px;
+    border-radius: calc(1.5rem - 1px);
     margin: 0 16px 16px 16px;
 }
 
@@ -92,19 +85,24 @@ body.dark {
     border-radius: 16px;
 }
 
-a {
+a,
+button {
     background-color: var(--blue4);
     border: 1px solid var(--black);
     padding: 12px 18px;
     display: inline-block;
-    border-radius: 8px;
+    transition: transform 0.25s ease, /*color 0.25s ease,*/ background-color 0.25s ease, border-color 0.25s ease;
+    border-radius: 1.125rem;
 }
 
-a:hover {
+a:hover,
+button:hover {
     font-weight: bold;
+    transform: scale(1.0425);
 }
 
-a:active {
+a:active,
+button:active {
     color: var(--accent);
 }
 
@@ -114,7 +112,9 @@ footer {
 }
 
 @media screen and (max-width: 767px) {
-    .content, .content-secondary{
+
+    .content,
+    .content-secondary {
         margin: 0 4px 4px 4px;
         border-radius: 4px;
     }
