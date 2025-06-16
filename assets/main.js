@@ -32,3 +32,12 @@ function navbarMenu() {
         navResponsive.className = "nav-content";
     }
 }
+
+window.addEventListener('scroll', function () {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 0) {
+        navbar.classList.add('shadow');
+    } else {
+        navbar.classList.remove('shadow');
+    }
+});
