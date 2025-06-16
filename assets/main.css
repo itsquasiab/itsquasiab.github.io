@@ -1,5 +1,6 @@
 /* Importing the Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* Color Scheme */
 [data-color-scheme="dark"] {
@@ -58,7 +59,7 @@ body.dark {
 }
 
 .navbar.shadow {
-    box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.22);
+    box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.4);
 }
 
 .nav-menu {
@@ -70,11 +71,6 @@ body.dark {
     transition: 0.25s ease;
     max-width: 80rem;
     margin: 0 auto;
-}
-
-.nav-content {
-    background-color: var(--blue1);
-    transition: 0.25s ease;
 }
 
 .nav-menu .nav-icon {
@@ -92,16 +88,23 @@ body.dark {
 
 .content {
     background-color: var(--blue3);
-    border-radius: calc(1.5rem - 1px);
+    border-radius: 1.5rem;
     margin: 0 16px 16px 16px;
     transition: 0.25s ease;
 }
 
 .content-inner {
     border: 2px dashed var(--black);
-    padding: 1.5rem;
     border-radius: 16px;
     transition: 0.25s ease;
+}
+
+.title-image {
+    border-radius: 14px;
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
+    display: block;
 }
 
 a,
@@ -133,17 +136,20 @@ footer {
 }
 
 @media screen and (max-width: 767px) {
-    .content {
-        margin: 0 15px 15px 15px;
-        border-radius: 1.5rem;
-    }
-
-    footer {
-        margin-bottom: 4px;
-    }
-
     .nav-menu {
         padding: 0;
+    }
+
+    .nav-content {
+        background-color: var(--blue1);
+        position: absolute;
+        top: 83px;
+        left: 16px;
+        right: 16px;
+        border-radius: 1.5rem;
+        box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.4);
+        transform: translateX(100%);
+        transition: 0.25s ease;
     }
 
     .nav-content a {
@@ -154,17 +160,10 @@ footer {
         display: block;
         position: absolute;
         right: 0;
-        border-right: none;
-    }
-
-    .content-inner {
-        padding: 1rem;
     }
 
     .nav-content.responsive {
-        position: absolute;
-        top: 67px;
-        width: 100%;
+        transform: translateX(0);
     }
 
     .nav-menu.responsive .nav-icon {
