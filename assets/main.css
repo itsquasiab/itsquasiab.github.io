@@ -14,14 +14,16 @@
 /* Root */
 :root {
     --accent: #506cbc;
+    --accent-secondary: hsl(224, 45%, 80%);
 
-    --black: #000;
-    --white: #fff;
+    --border: hsl(224, 64%, 85%);
 
-    --blue1: #b8d6ee;
-    --blue2: #cae1f2;
-    --blue3: #deecf6;
-    --blue4: #e6f0fa;
+    --sharp: hsl(0, 0%, 5%);
+    --muted: hsl(0, 0%, 10%);
+
+    --blue1: hsl(224, 64%, 90%);
+    --blue2: hsl(224, 64%, 95%);
+    --blue3: hsl(224, 64%, 100%);
 }
 
 /* Body */
@@ -35,19 +37,29 @@ body {
 /* Dark Mode */
 body.dark {
     --accent: #506cbc;
+    --accent-secondary: hsl(224, 45%, 20%);
 
-    --black: #fff;
-    --white: #000;
+    --border: hsl(224, 72%, 20%);
 
-    --blue1: #040c18;
-    --blue2: #041224;
-    --blue3: #081830;
-    --blue4: #0a1e3c;
+    --sharp: hsl(0, 0%, 95%);
+    --muted: hsl(0, 0%, 90%);
+
+    --blue1: hsl(224, 72%, 5%);
+    --blue2: hsl(224, 72%, 10%);
+    --blue3: hsl(224, 72%, 15%);
+}
+
+h1 {
+    color: var(--sharp);
+}
+
+p {
+    color: var(--muted);
 }
 
 .container {
     max-width: 80rem;
-    margin: 0 auto;
+    margin: 67px auto 0;
 }
 
 .navbar {
@@ -55,7 +67,6 @@ body.dark {
     width: 100%;
     position: fixed;
     top: 0;
-    padding: 2.5px;
     transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -88,14 +99,14 @@ body.dark {
 }
 
 .content {
-    background-color: var(--blue3);
+    background-color: var(--blue2);
     border-radius: 1.5rem;
-    margin: 0 16px 16px 16px;
+    margin: 0 1rem 1rem;
     transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .content-inner {
-    border: 2px dashed var(--black);
+    border: 2px dashed var(--border);
     border-radius: 16px;
     transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
@@ -103,7 +114,7 @@ body.dark {
 .title-image {
     aspect-ratio: 16 / 9;
     /* or any other ratio like 4 / 3 */
-    max-height: 400px;
+    max-height: 420px;
     width: 100%;
     overflow: hidden;
 }
@@ -118,8 +129,8 @@ body.dark {
 
 a,
 button {
-    background-color: var(--blue4);
-    border: 1px solid var(--black);
+    background-color: var(--blue3);
+    border: 1px solid var(--border);
     padding: 12px 18px;
     display: inline-block;
     transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
@@ -128,8 +139,9 @@ button {
 
 a:hover,
 button:hover {
-    background-color: var(--blue2);
     font-weight: bold;
+    background-color: var(--accent-secondary);
+    border-color: var(--accent);
     transform: scale(1.0425);
 }
 
@@ -152,10 +164,10 @@ footer {
     .nav-content {
         background-color: var(--blue1);
         position: absolute;
-        top: 88px;
-        left: 16px;
-        right: 16px;
-        border-radius: 1.5rem;
+        top: 83px;
+        left: 32px;
+        right: 32px;
+        border-radius: 1rem;
         box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.4);
         transform: translateX(100%);
         transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease;
@@ -181,6 +193,6 @@ footer {
 
     .nav-content.responsive a {
         display: block;
-        padding: 12px 24px;
+        padding: 12px 20px;
     }
 }
