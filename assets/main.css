@@ -18,8 +18,7 @@
 
     --border: hsl(224, 64%, 85%);
 
-    --sharp: hsl(0, 0%, 5%);
-    --muted: hsl(0, 0%, 10%);
+    --text: hsl(0, 0%, 5%);
 
     --blue1: hsl(224, 64%, 90%);
     --blue2: hsl(224, 64%, 95%);
@@ -31,6 +30,7 @@ body {
     font-family: 'Space Grotesk';
     /*background-image: linear-gradient(180deg, var(--blue1), var(--blue2));*/
     background-color: var(--blue1);
+    color: var(--text);
     transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
@@ -41,20 +41,11 @@ body.dark {
 
     --border: hsl(224, 72%, 20%);
 
-    --sharp: hsl(0, 0%, 95%);
-    --muted: hsl(0, 0%, 90%);
+    --text: hsl(0, 0%, 95%);
 
     --blue1: hsl(224, 72%, 5%);
     --blue2: hsl(224, 72%, 10%);
     --blue3: hsl(224, 72%, 15%);
-}
-
-h1 {
-    color: var(--sharp);
-}
-
-p {
-    color: var(--muted);
 }
 
 .container {
@@ -106,7 +97,7 @@ p {
 }
 
 .content-inner {
-    border: 2px dashed var(--border);
+    border: 2px dashed var(--text);
     border-radius: 16px;
     transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
