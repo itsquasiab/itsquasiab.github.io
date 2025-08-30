@@ -2,76 +2,84 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-/* Color Scheme */
-[data-color-scheme="dark"] {
-    color-scheme: dark;
-}
-
+/* Light Mode */
 [data-color-scheme="light"] {
     color-scheme: light;
-}
-
-/* Root */
-:root {
-    --accent: #506cbc;
-    --accent-secondary: hsl(224, 45%, 80%);
-
-    --border: hsl(224, 64%, 85%);
+    --accent: #586def;
+    --accent-secondary: hsl(230, 56%, 80%);
 
     --text: hsl(0, 0%, 5%);
 
-    --blue1: hsl(224, 64%, 90%);
-    --blue2: hsl(224, 64%, 95%);
-    --blue3: hsl(224, 64%, 100%);
+    --nav: hsla(200, 75%, 90%, 0.9);
+    --title-box: hsla(200, 75%, 90%, 0.6);
+
+    --border: hsl(200, 75%, 80%);
+    --bg-dark: hsl(200, 75%, 90%);
+    --bg: hsl(200, 75%, 95%);
+    --bg-light: hsl(200, 75%, 100%);
+
+    --blur: 16px;
+}
+
+/* Dark Mode */
+[data-color-scheme="dark"] {
+    color-scheme: dark;
+
+    --accent: #586def;
+    --accent-secondary: hsl(230, 56%, 20%);
+
+    --text: hsl(0, 0%, 95%);
+
+    --nav: hsla(240, 50%, 5%, 0.9);
+    --title-box: hsla(240, 50%, 5%, 0.6);
+
+    --border: hsl(240, 50%, 20%);
+    --bg-dark: hsl(240, 50%, 5%);
+    --bg: hsl(240, 50%, 10%);
+    --bg-light: hsl(240, 50%, 15%);
+
+    --blur: 16px;
 }
 
 /* Body */
 body {
     font-family: 'Space Grotesk';
-    /*background-image: linear-gradient(180deg, var(--blue1), var(--blue2));*/
-    background-color: var(--blue1);
-    color: var(--text);
+    background-color: var(--bg-dark);
     transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
-}
-
-/* Dark Mode */
-body.dark {
-    --accent: #506cbc;
-    --accent-secondary: hsl(224, 45%, 20%);
-
-    --border: hsl(224, 72%, 20%);
-
-    --text: hsl(0, 0%, 95%);
-
-    --blue1: hsl(224, 72%, 5%);
-    --blue2: hsl(224, 72%, 10%);
-    --blue3: hsl(224, 72%, 15%);
 }
 
 .container {
     max-width: 80rem;
-    margin: 67px auto 0;
+    margin: 0 auto;
 }
 
-.navbar {
-    background-color: var(--blue1);
-    width: 100%;
-    position: fixed;
+header {
+    position: sticky;
     top: 0;
+    width: 100%;
+    background-color: var(--nav);
+    z-index: 1;
     transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.navbar.shadow {
-    box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.4);
+.backdrop {
+    position: absolute;
+    inset: 0;
+    -webkit-backdrop-filter: blur(var(--blur));
+    backdrop-filter: blur(var(--blur));
+    background: linear-gradient(to bottom, var(--bg-dark), transparent 20%);
+    pointer-events: none;
+
+    height: 200%;
+    -webkit-mask-image: linear-gradient(to bottom, black 0% 50%, transparent 50% 100%);
+    mask-image: linear-gradient(to bottom, black 0% 50%, transparent 50% 100%);
 }
 
 .nav-menu {
     display: flex;
     justify-content: space-between;
-    height: 100%;
+    position: relative;
     padding: 0 20px;
-    overflow: hidden;
-    transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
     max-width: 80rem;
     margin: 0 auto;
 }
@@ -90,9 +98,11 @@ body.dark {
 }
 
 .content {
-    background-color: var(--blue2);
+    background-color: var(--bg);
     border-radius: 1.5rem;
     margin: 0 1rem 1rem;
+    border: 1px solid var(--border);
+    box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.1);
     transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
@@ -102,25 +112,24 @@ body.dark {
     transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
-.title-image {
-    aspect-ratio: 16 / 9;
-    /* or any other ratio like 4 / 3 */
-    max-height: 420px;
+.title {
+    height: 86vh;
     width: 100%;
     overflow: hidden;
+    border-radius: 1.5rem;
 }
 
-.title-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+.title-box {
+    background-color: var(--title-box);
+    -webkit-backdrop-filter: blur(var(--blur));
+    backdrop-filter: blur(var(--blur));
     border-radius: 1rem;
+    transition: color 0.25s ease, background-color 0.25s ease;
 }
 
 a,
 button {
-    background-color: var(--blue3);
+    background-color: var(--bg-light);
     border: 1px solid var(--border);
     padding: 12px 18px;
     display: inline-block;
@@ -152,18 +161,6 @@ footer {
         padding: 0;
     }
 
-    .nav-content {
-        background-color: var(--blue1);
-        position: absolute;
-        top: 83px;
-        left: 32px;
-        right: 32px;
-        border-radius: 1rem;
-        box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.4);
-        transform: translateX(100%);
-        transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease;
-    }
-
     .nav-content a {
         display: none;
     }
@@ -175,7 +172,15 @@ footer {
     }
 
     .nav-content.responsive {
-        transform: translateX(0);
+        background-color: var(--nav);
+        position: absolute;
+        top: 83px;
+        left: 32px;
+        right: 32px;
+        -webkit-backdrop-filter: blur(var(--blur));
+        backdrop-filter: blur(var(--blur));
+        border-radius: 1rem;
+        transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease;
     }
 
     .nav-menu.responsive .nav-icon {

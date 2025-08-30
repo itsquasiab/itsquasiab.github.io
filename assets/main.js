@@ -25,7 +25,7 @@ if (darkModeToggle) {
 }
 
 function navbarMenu() {
-    var navResponsive = document.getElementById("nav");
+    var navResponsive = document.querySelector(".nav-content");
     if (navResponsive.className === "nav-content") {
         navResponsive.className += " responsive";
     } else {
@@ -33,11 +33,11 @@ function navbarMenu() {
     }
 }
 
-window.addEventListener('scroll', function () {
-    const navbar = document.getElementById('navbar');
+/*window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.nav-menu');
     if (window.scrollY > 0) {
         navbar.classList.add('shadow');
     } else {
         navbar.classList.remove('shadow');
     }
-});
+});*/
