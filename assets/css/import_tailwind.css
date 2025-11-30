@@ -1,5 +1,5 @@
 /* npm install tailwindcss @tailwindcss/cli */
-/* npx @tailwindcss/cli -i ./assets/import_tailwind.css -o ./assets/tailwind.css --watch */
+/* npx @tailwindcss/cli -i ./assets/css/import_tailwind.css -o ./assets/css/tailwind.css --watch */
 @import "tailwindcss";
 
 @theme {

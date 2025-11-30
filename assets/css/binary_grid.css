@@ -1,0 +1,26 @@
+/* full screen background */
+#binary-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* colors for 0 and 1 */
+.binary-cell[data-bit="0"] {
+  color: var(--primary-foreground);
+}
+
+.binary-cell[data-bit="1"] {
+  color: var(--primary);
+}
+
+/* optional slight animation */
+@keyframes flicker {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}
+.binary-cell {
+  animation: flicker 2s infinite ease-in-out;
+}
