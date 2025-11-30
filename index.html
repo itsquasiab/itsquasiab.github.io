@@ -17,26 +17,45 @@
 
   <canvas id="binary-canvas"></canvas>
 
-  <div class="p-1 text-center">
+  <div class="text-center">
 
-    <div class="flex justify-center gap-1 px-1 my-0.5">
-      <button id="switch-btn"></button>
-      <button id="light-btn">light</button>
-      <button id="dark-btn">dark</button>
-      <button id="system-btn">system</button>
+    <div class="flex justify-center gap-0.5 px-1 my-0.5">
+      <button id="main-btn">home</button>
+      <button id="clock-btn">clock</button>
+      <button id="settings-btn">settings</button>
     </div>
 
     <div class="glass p-2">
-      <div id="clock-content" class="hidden">
-        <h1 id="clock" class="text-5xl md:text-7xl font-bold"></h1>
-        <p id="date" class="pt-0.5"></p>
-      </div>
       <div id="main-content">
         <h1 class="text-5xl md:text-7xl font-bold">itsquasi</h1>
         <div class="flex justify-center gap-1 pt-0.5">
           <a href="https://itsquasiab.github.io/uilib/">uilib</a>
           <a href="https://github.com/itsquasiab/">github</a>
           <a href="https://coderheck.pages.dev/">ioxzy</a>
+        </div>
+      </div>
+      <div id="clock-content" class="hidden">
+        <h1 id="clock" class="text-5xl md:text-7xl font-bold"></h1>
+        <p id="date" class="pt-0.5"></p>
+      </div>
+      <div id="settings-content">
+        <p class="my-0.5">color:</p>
+        <div class="grid grid-cols-2 gap-0.5">
+          <button class="color-btn color-light_blue" data-color="light_blue"><span class="color light-blue"></span>eva</button>
+          <button class="color-btn color-blue" data-color="blue"><span class="color blue"></span>lexon</button>
+          <button class="color-btn color-purple" data-color="purple"><span class="color purple"></span>veyrix</button>
+          <button class="color-btn color-pink" data-color="pink"><span class="color pink"></span>kayla</button>
+          <button class="color-btn color-red" data-color="red"><span class="color red"></span>tyra</button>
+          <button class="color-btn color-orange" data-color="orange"><span class="color orange"></span>flarence</button>
+          <button class="color-btn color-yellow" data-color="yellow"><span class="color yellow"></span>trixie</button>
+          <button class="color-btn color-green" data-color="green"><span class="color green"></span>zyren</button>
+        </div>
+        <p class="accent text-sm">these color name may have been inspired</p>
+        <p class="my-0.5">color mode:</p>
+        <div class="flex justify-center gap-0.5">
+          <button id="light-btn">light</button>
+          <button id="dark-btn">dark</button>
+          <button id="system-btn">system</button>
         </div>
       </div>
     </div>

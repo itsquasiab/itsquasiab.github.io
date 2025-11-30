@@ -1,4 +1,5 @@
 /* dark light mode */
+
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
 function applyTheme(theme) {
@@ -23,25 +24,66 @@ prefersDark.addEventListener("change", () => {
     }
 });
 
-// Optional: attach to buttons if they exist on this page
+/* color mode */
+
+function applyColor(color) {
+    document.documentElement.setAttribute("data-color", color);
+    localStorage.setItem("color", color);
+
+    // update active button
+    document.querySelectorAll(".color-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.color === color);
+    });
+}
+
+(function initColor() {
+    const savedColor = localStorage.getItem("color") || "blue";
+    applyColor(savedColor);
+})();
+
+document.querySelectorAll(".color-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        applyColor(btn.dataset.color);
+    });
+});
+
+/* dom content loader */
+
 document.addEventListener("DOMContentLoaded", () => {
-    const lightBtn = document.getElementById("light-btn");
-    const darkBtn = document.getElementById("dark-btn");
+    const lightBtn  = document.getElementById("light-btn");
+    const darkBtn   = document.getElementById("dark-btn");
     const systemBtn = document.getElementById("system-btn");
+
+    const allThemeButtons = [lightBtn, darkBtn, systemBtn];
+
+    function updateActiveThemeButton(theme) {
+        allThemeButtons.forEach(btn => btn.classList.remove("active"));
+
+        if (theme === "light")    lightBtn.classList.add("active");
+        if (theme === "dark")     darkBtn.classList.add("active");
+        if (theme === "system")   systemBtn.classList.add("active");
+    }
+
+    // apply active state on load
+    const saved = localStorage.getItem("theme") || "system";
+    updateActiveThemeButton(saved);
 
     if (lightBtn) lightBtn.addEventListener("click", () => {
         localStorage.setItem("theme", "light");
         applyTheme("light");
+        updateActiveThemeButton("light");
     });
 
     if (darkBtn) darkBtn.addEventListener("click", () => {
         localStorage.setItem("theme", "dark");
         applyTheme("dark");
+        updateActiveThemeButton("dark");
     });
 
     if (systemBtn) systemBtn.addEventListener("click", () => {
         localStorage.setItem("theme", "system");
         applyTheme("system");
+        updateActiveThemeButton("system");
     });
 });
 
@@ -168,21 +210,34 @@ updateClock();
 
 /* switch button */
 
-const switchBtn = document.getElementById("switch-btn");
-const content1 = document.getElementById("clock-content");
-const content2 = document.getElementById("main-content");
+const mainBtn = document.getElementById("main-btn");
+const clockBtn = document.getElementById("clock-btn");
+const settingsBtn = document.getElementById("settings-btn");
 
-// Initialize button text
-switchBtn.textContent = "clock";
+const mainContent = document.getElementById("main-content");
+const clockContent = document.getElementById("clock-content");
+const settingsContent = document.getElementById("settings-content");
 
-switchBtn.addEventListener("click", () => {
-    content1.classList.toggle("hidden");
-    content2.classList.toggle("hidden");
+function showContent(target) {
+    mainContent.classList.add("hidden");
+    clockContent.classList.add("hidden");
+    settingsContent.classList.add("hidden");
 
-    // Update button text based on which content is visible
-    if (!content1.classList.contains("hidden")) {
-        switchBtn.textContent = "main";
-    } else {
-        switchBtn.textContent = "clock";
-    }
-});
+    // remove active class from all
+    mainBtn.classList.remove("active");
+    clockBtn.classList.remove("active");
+    settingsBtn.classList.remove("active");
+
+    // show selected
+    document.getElementById(target + "-content").classList.remove("hidden");
+
+    // highlight active button
+    document.getElementById(target + "-btn").classList.add("active");
+}
+
+mainBtn.addEventListener("click", () => showContent("main"));
+clockBtn.addEventListener("click", () => showContent("clock"));
+settingsBtn.addEventListener("click", () => showContent("settings"));
+
+// default: show main
+showContent("main");
