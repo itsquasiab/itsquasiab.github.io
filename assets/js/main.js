@@ -37,7 +37,7 @@ function applyColor(color) {
 }
 
 (function initColor() {
-    const savedColor = localStorage.getItem("color") || "blue";
+    const savedColor = localStorage.getItem("color") || "light_blue";
     applyColor(savedColor);
 })();
 
