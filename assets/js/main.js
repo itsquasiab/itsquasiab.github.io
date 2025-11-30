@@ -131,8 +131,8 @@ function flipBits() {
 generateGrid();
 drawGrid();
 
-// Flip bits every 0.5 seconds
-setInterval(flipBits, 500);
+// Flip bits every 1 seconds
+setInterval(flipBits, 1000);
 
 /* clock */
 
