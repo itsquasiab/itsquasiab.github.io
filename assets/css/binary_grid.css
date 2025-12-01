@@ -1,5 +1,4 @@
-/* full screen background */
-#binary-canvas {
+#binary-grid {
   position: fixed;
   inset: 0;
   width: 100%;

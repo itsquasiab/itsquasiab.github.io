@@ -8,7 +8,6 @@
     --transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Body */
 body {
     font-family: 'Space Grotesk';
     background-color: var(--background);
@@ -23,11 +22,22 @@ body {
 
 .active {
     font-weight: bold;
-    border: 1px solid var(--primary-foreground);
+    border: 1px solid var(--accent);
+}
+
+.button-tab button {
+    -webkit-backdrop-filter: var(--blur);
+    backdrop-filter: var(--blur);
+}
+
+.button-container {
+    border-radius: 2rem;
+    border: 1px solid var(--accent);
+    padding: 0.25rem;
 }
 
 .accent {
-    color: var(--primary-foreground);
+    color: var(--primary);
 }
 
 a {
@@ -47,12 +57,10 @@ a:active {
 }
 
 button {
-    -webkit-backdrop-filter: var(--blur);
-    backdrop-filter: var(--blur);
     color: var(--primary);
     padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    transition: filter var(--transition), transform var(--transition);
+    border-radius: 2rem;
+    transition: filter var(--transition), transform var(--transition), font-weight var(--transition);
 }
 
 button:hover {
