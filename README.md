@@ -1,2 +1,2 @@
 # itsquasiab.github.io
-A website made by ItsQuasi.
+A website made by itsquasi.
