@@ -44,30 +44,18 @@ a {
     color: var(--primary);
     text-decoration: none;
     display: inline-block;
-    transition: filter var(--transition), transform var(--transition);
 }
 
 a:hover {
-    filter: brightness(1.2);
-    transform: translateY(-2px);
-}
-
-a:active {
-    transform: scale(0.95);
+    text-decoration: underline;
 }
 
 button {
     color: var(--primary);
     padding: 0.25rem 0.75rem;
     border-radius: 2rem;
-    transition: filter var(--transition), transform var(--transition), font-weight var(--transition);
 }
 
 button:hover {
     filter: brightness(1.2);
-    transform: scale(1.05);
-}
-
-button:active {
-    transform: scale(0.95);
 }
