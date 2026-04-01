@@ -108,42 +108,33 @@ let lastSecond = -1; // Tracks seconds for the binary flip
 let lastDateString = ""; // **Tracks the formatted date for the daily update**
 
 function updateClock() {
-    const time = document.getElementById("time");
+    const timeEl = document.getElementById("time");
     const dateEl = document.getElementById("date");
     const now = new Date();
 
-    // --- TIME & BINARY UPDATE (Runs every 50ms) ---
-
-    // Format time as HH:MM:SS
     const hours = String(now.getHours()).padStart(2, "0");
     const minutes = String(now.getMinutes()).padStart(2, "0");
     const seconds = now.getSeconds();
     const formattedSeconds = String(seconds).padStart(2, "0");
 
-    time.textContent = `${hours}:${minutes}:${formattedSeconds}`;
+    // Fix: Only update if the element exists on the current page
+    if (timeEl) {
+        timeEl.textContent = `${hours}:${minutes}:${formattedSeconds}`;
+    }
 
-    // Check if the second has actually changed to sync the binary grid
+    // Binary flip logic (This runs even if the clock text is hidden!)
     if (seconds !== lastSecond) {
         flipBitsAndDraw();
         lastSecond = seconds;
     }
 
-    // --- DATE UPDATE (Only runs when the day changes) ---
-
-    // Format date string for comparison
+    // Date logic
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const currentDateString = `${days[now.getDay()]}, ${String(now.getDate()).padStart(2, "0")} ${months[now.getMonth()]} ${now.getFullYear()}`;
 
-    const dayName = days[now.getDay()];
-    const date = String(now.getDate()).padStart(2, "0");
-    const monthName = months[now.getMonth()];
-    const year = now.getFullYear();
-
-    // **Only update the DOM element if the date string is new**
-    const currentDateString = `${dayName}, ${date} ${monthName} ${year}`;
-
-    if (currentDateString !== lastDateString) {
+    // Fix: Only update if the element exists AND the date changed
+    if (dateEl && currentDateString !== lastDateString) {
         dateEl.textContent = currentDateString;
         lastDateString = currentDateString;
     }
